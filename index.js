@@ -5,6 +5,21 @@ const cluster = require('cluster');
 
 const numCPUs = os.cpus().length;
 
+function handleClientError(socket, error) {
+  console.error('Client error:', error);
+  socket.destroy();
+}
+function handleHTTPRequest(req, res) {
+  const path = req.url;
+  const userAgent = req.headers['user-agent'];
+  const clientIP = req.connection.remoteAddress;
+  console.log(`[REQUEST] ${clientIP} - ${path}`);
+ if (path === '/' && req.method === 'GET') {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Hello, World!');
+  }
+}
+
 const args = process.argv.slice(2);
   if (cluster.isMaster) {
     for (let i = 0; i < numCPUs; i++) {
