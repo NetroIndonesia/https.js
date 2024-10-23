@@ -16,7 +16,7 @@ Before running the server, you need to have the following:
 
 1. Clone this repository:
     ```bash
-    git clone https://github.com/NetroIndonesia/your-repo-name.git
+    git clone https://github.com/NetroIndonesia/https.js.git
     ```
 
 2. Navigate to the project directory:
