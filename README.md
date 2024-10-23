@@ -21,7 +21,7 @@ Before running the server, you need to have the following:
 
 2. Navigate to the project directory:
     ```bash
-    cd your-repo-name
+    cd https.js
     ```
 
 3. Install necessary dependencies (if applicable):
